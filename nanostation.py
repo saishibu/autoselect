@@ -3,6 +3,16 @@
 import urllib, urllib2, cookielib
 import ssl,json,time
 
+import mechanize
+from bs4 import BeautifulSoup
+
+url2='https://192.168.179.65/link.cgi'
+br = mechanize.Browser()
+br.open(url)
+br.set_handle_redirect(True)
+br.set_handle_robots(False)
+br.addheaders = [('User-agent', 'Firefox')]
+
 url='https://192.168.179.65/login.cgi'
 ssl._create_default_https_context = ssl._create_unverified_context
 cj=cookielib.CookieJar()
@@ -11,18 +21,7 @@ r=opener.open(url)
 login_data=urllib.urlencode({'username':'ubnt', 'password':'1234','action':'login'})
 r=opener.open(url,login_data)
 print "login success"
-url='https://192.168.179.65/status.cgi'
-status_page=opener.open(url)
-status=status_page.read()
-json_status=json.loads(status)
-signal=json_status['wireless']['signal']
-rssi=json_status['wireless']['rssi']
-noise=json_status['wireless']['noisef']
-ccq=json_status['wireless']['ccq']
-distance=json_status['wireless']['distance']
-txrate=json_status['wireless']['txrate']
-rxrate=json_status['wireless']['rxrate']
-freq=json_status['wireless']['frequency']
-channel=json_status['wireless']['channel']
 
-print signal
+for form in br.forms():
+    print "Form name: ", form.name
+    br.select_form(nr=0) # nr=0 It selects html form without name
