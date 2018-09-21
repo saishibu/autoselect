@@ -1,0 +1,1166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/DTD/loose.dtd">
+<html>
+<head>
+<title>[NanoStation M2] - Wireless</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="shortcut icon" href="/150716.1200/favicon.ico" >
+<link href="/150716.1200/style.css" rel="stylesheet" type="text/css">
+<link href="/150716.1200/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="/150716.1200/help.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jsl10n.cgi?l=en_US&v=/150716.1200"></script>
+<script type="text/javascript" src="/150716.1200/slider-min.js"></script>
+<script type="text/javascript" src="/150716.1200/jsval.js"></script>
+<script type="text/javascript" src="/150716.1200/util.js"></script>
+<script type="text/javascript" src="/150716.1200/network.js"></script>
+<script type="text/javascript" language="javascript1.2" src="/150716.1200/slink.js"></script>
+<script type="text/javascript" src="/150716.1200/js/jquery.js"></script>
+<script type="text/javascript" src="/150716.1200/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/150716.1200/js/jquery.ui.js"></script>
+<script type="text/javascript" src="/150716.1200/js/jquery.passwd.js"></script>
+<script type="text/javascript" src="/150716.1200/js/jquery.utils.js"></script>
+<script type="text/javascript" src="/150716.1200/help.js"></script>
+<script type="text/javascript" src="/150716.1200/js/jquery.blockUI.js"></script>
+<link type="text/css" rel="StyleSheet" href="/150716.1200/bluecurve.css" />
+<script type="text/javascript">
+//<!--
+var radio_chains = 2;
+
+/* regdomain 356 -D 2400 -r -a -j -b 5,8,10,20,30,40 */
+full_regdomain = [
+
+"India (IN, 0x164, 356) RD_WORLD (0x0, 0)",
+"2412   1 G  5 36.0  1  0  1",
+"2417   2 G  5 36.0  1  0  1",
+"2422   3 G  5 36.0  1  0  1",
+"2427   4 G  5 36.0  1  0  1",
+"2432   5 G  5 36.0  1  0  1",
+"2437   6 G  5 36.0  1  0  1",
+"2442   7 G  5 36.0  1  0  1",
+"2447   8 G  5 36.0  1  0  1",
+"2452   9 G  5 36.0  1  0  1",
+"2457  10 G  5 36.0  1  0  1",
+"2462  11 G  5 36.0  1  0  1",
+"2467  12 G  5 36.0  1  0  1",
+"2472  13 G  5 36.0  1  0  1",
+"2412   1 G  5 36.0  1  1  1",
+"2414  31 G  5 36.0  1  1  1",
+"2417   2 G  5 36.0  1  1  1",
+"2419  32 G  5 36.0  1  1  1",
+"2422   3 G  5 36.0  1  1  1",
+"2424  33 G  5 36.0  1  1  1",
+"2427   4 G  5 36.0  1  1  1",
+"2429  34 G  5 36.0  1  1  1",
+"2432   5 G  5 36.0  1  1  1",
+"2434  35 G  5 36.0  1  1  1",
+"2437   6 G  5 36.0  1  1  1",
+"2439  36 G  5 36.0  1  1  1",
+"2442   7 G  5 36.0  1  1  1",
+"2444  37 G  5 36.0  1  1  1",
+"2447   8 G  5 36.0  1  1  1",
+"2449  38 G  5 36.0  1  1  1",
+"2452   9 G  5 36.0  1  1  1",
+"2454  39 G  5 36.0  1  1  1",
+"2457  10 G  5 36.0  1  1  1",
+"2459  40 G  5 36.0  1  1  1",
+"2462  11 G  5 36.0  1  1  1",
+"2464  41 G  5 36.0  1  1  1",
+"2467  12 G  5 36.0  1  1  1",
+"2469  42 G  5 36.0  1  1  1",
+"2472  13 G  5 36.0  1  1  1",
+"2474  43 G  5 36.0  1  1  1",
+"2412   1 G  8 36.0  1  0  1",
+"2417   2 G  8 36.0  1  0  1",
+"2422   3 G  8 36.0  1  0  1",
+"2427   4 G  8 36.0  1  0  1",
+"2432   5 G  8 36.0  1  0  1",
+"2437   6 G  8 36.0  1  0  1",
+"2442   7 G  8 36.0  1  0  1",
+"2447   8 G  8 36.0  1  0  1",
+"2452   9 G  8 36.0  1  0  1",
+"2457  10 G  8 36.0  1  0  1",
+"2462  11 G  8 36.0  1  0  1",
+"2467  12 G  8 36.0  1  0  1",
+"2472  13 G  8 36.0  1  0  1",
+"2412   1 G  8 36.0  1  1  1",
+"2414  31 G  8 36.0  1  1  1",
+"2417   2 G  8 36.0  1  1  1",
+"2419  32 G  8 36.0  1  1  1",
+"2422   3 G  8 36.0  1  1  1",
+"2424  33 G  8 36.0  1  1  1",
+"2427   4 G  8 36.0  1  1  1",
+"2429  34 G  8 36.0  1  1  1",
+"2432   5 G  8 36.0  1  1  1",
+"2434  35 G  8 36.0  1  1  1",
+"2437   6 G  8 36.0  1  1  1",
+"2439  36 G  8 36.0  1  1  1",
+"2442   7 G  8 36.0  1  1  1",
+"2444  37 G  8 36.0  1  1  1",
+"2447   8 G  8 36.0  1  1  1",
+"2449  38 G  8 36.0  1  1  1",
+"2452   9 G  8 36.0  1  1  1",
+"2454  39 G  8 36.0  1  1  1",
+"2457  10 G  8 36.0  1  1  1",
+"2459  40 G  8 36.0  1  1  1",
+"2462  11 G  8 36.0  1  1  1",
+"2464  41 G  8 36.0  1  1  1",
+"2467  12 G  8 36.0  1  1  1",
+"2469  42 G  8 36.0  1  1  1",
+"2472  13 G  8 36.0  1  1  1",
+"2474  43 G  8 36.0  1  1  1",
+"2412   1 G 10 36.0  1  0  1",
+"2417   2 G 10 36.0  1  0  1",
+"2422   3 G 10 36.0  1  0  1",
+"2427   4 G 10 36.0  1  0  1",
+"2432   5 G 10 36.0  1  0  1",
+"2437   6 G 10 36.0  1  0  1",
+"2442   7 G 10 36.0  1  0  1",
+"2447   8 G 10 36.0  1  0  1",
+"2452   9 G 10 36.0  1  0  1",
+"2457  10 G 10 36.0  1  0  1",
+"2462  11 G 10 36.0  1  0  1",
+"2467  12 G 10 36.0  1  0  1",
+"2472  13 G 10 36.0  1  0  1",
+"2412   1 G 10 36.0  1  1  1",
+"2414  31 G 10 36.0  1  1  1",
+"2417   2 G 10 36.0  1  1  1",
+"2419  32 G 10 36.0  1  1  1",
+"2422   3 G 10 36.0  1  1  1",
+"2424  33 G 10 36.0  1  1  1",
+"2427   4 G 10 36.0  1  1  1",
+"2429  34 G 10 36.0  1  1  1",
+"2432   5 G 10 36.0  1  1  1",
+"2434  35 G 10 36.0  1  1  1",
+"2437   6 G 10 36.0  1  1  1",
+"2439  36 G 10 36.0  1  1  1",
+"2442   7 G 10 36.0  1  1  1",
+"2444  37 G 10 36.0  1  1  1",
+"2447   8 G 10 36.0  1  1  1",
+"2449  38 G 10 36.0  1  1  1",
+"2452   9 G 10 36.0  1  1  1",
+"2454  39 G 10 36.0  1  1  1",
+"2457  10 G 10 36.0  1  1  1",
+"2459  40 G 10 36.0  1  1  1",
+"2462  11 G 10 36.0  1  1  1",
+"2464  41 G 10 36.0  1  1  1",
+"2467  12 G 10 36.0  1  1  1",
+"2469  42 G 10 36.0  1  1  1",
+"2472  13 G 10 36.0  1  1  1",
+"2474  43 G 10 36.0  1  1  1",
+"2412   1 G 20 36.0  1  0  1",
+"2417   2 G 20 36.0  1  0  1",
+"2422   3 G 20 36.0  1  0  1",
+"2427   4 G 20 36.0  1  0  1",
+"2432   5 G 20 36.0  1  0  1",
+"2437   6 G 20 36.0  1  0  1",
+"2442   7 G 20 36.0  1  0  1",
+"2447   8 G 20 36.0  1  0  1",
+"2452   9 G 20 36.0  1  0  1",
+"2457  10 G 20 36.0  1  0  1",
+"2462  11 G 20 36.0  1  0  1",
+"2467  12 G 20 36.0  1  0  1",
+"2472  13 G 20 36.0  1  0  1",
+"2412   1 G 20 36.0  1  1  1",
+"2414  31 G 20 36.0  1  1  1",
+"2417   2 G 20 36.0  1  1  1",
+"2419  32 G 20 36.0  1  1  1",
+"2422   3 G 20 36.0  1  1  1",
+"2424  33 G 20 36.0  1  1  1",
+"2427   4 G 20 36.0  1  1  1",
+"2429  34 G 20 36.0  1  1  1",
+"2432   5 G 20 36.0  1  1  1",
+"2434  35 G 20 36.0  1  1  1",
+"2437   6 G 20 36.0  1  1  1",
+"2439  36 G 20 36.0  1  1  1",
+"2442   7 G 20 36.0  1  1  1",
+"2444  37 G 20 36.0  1  1  1",
+"2447   8 G 20 36.0  1  1  1",
+"2449  38 G 20 36.0  1  1  1",
+"2452   9 G 20 36.0  1  1  1",
+"2454  39 G 20 36.0  1  1  1",
+"2457  10 G 20 36.0  1  1  1",
+"2459  40 G 20 36.0  1  1  1",
+"2462  11 G 20 36.0  1  1  1",
+"2464  41 G 20 36.0  1  1  1",
+"2467  12 G 20 36.0  1  1  1",
+"2469  42 G 20 36.0  1  1  1",
+"2472  13 G 20 36.0  1  1  1",
+"2474  43 G 20 36.0  1  1  1",
+"2417   2 G 30 36.0  3  0  1",
+"2422   3 G 30 36.0  3  0  1",
+"2427   4 G 30 36.0  3  0  1",
+"2432   5 G 30 36.0  3  0  1",
+"2437   6 G 30 36.0  7  0  1",
+"2442   7 G 30 36.0  7  0  1",
+"2447   8 G 30 36.0  7  0  1",
+"2452   9 G 30 36.0  5  0  1",
+"2457  10 G 30 36.0  5  0  1",
+"2462  11 G 30 36.0  5  0  1",
+"2467  12 G 30 36.0  5  0  1",
+"2417   2 G 30 36.0  3  1  1",
+"2419  32 G 30 36.0  3  1  1",
+"2422   3 G 30 36.0  3  1  1",
+"2424  33 G 30 36.0  3  1  1",
+"2427   4 G 30 36.0  3  1  1",
+"2429  34 G 30 36.0  3  1  1",
+"2432   5 G 30 36.0  3  1  1",
+"2434  35 G 30 36.0  3  1  1",
+"2437   6 G 30 36.0  7  1  1",
+"2439  36 G 30 36.0  7  1  1",
+"2442   7 G 30 36.0  7  1  1",
+"2444  37 G 30 36.0  7  1  1",
+"2447   8 G 30 36.0  7  1  1",
+"2449  38 G 30 36.0  7  1  1",
+"2452   9 G 30 36.0  5  1  1",
+"2454  39 G 30 36.0  5  1  1",
+"2457  10 G 30 36.0  5  1  1",
+"2459  40 G 30 36.0  5  1  1",
+"2462  11 G 30 36.0  5  1  1",
+"2464  41 G 30 36.0  5  1  1",
+"2467  12 G 30 36.0  5  1  1",
+"2469  42 G 30 36.0  5  1  1",
+"2412   1 G 40 36.0  3  0  1",
+"2417   2 G 40 36.0  3  0  1",
+"2422   3 G 40 36.0  3  0  1",
+"2427   4 G 40 36.0  3  0  1",
+"2432   5 G 40 36.0  7  0  1",
+"2437   6 G 40 36.0  7  0  1",
+"2442   7 G 40 36.0  7  0  1",
+"2447   8 G 40 36.0  7  0  1",
+"2452   9 G 40 36.0  7  0  1",
+"2457  10 G 40 36.0  5  0  1",
+"2462  11 G 40 36.0  5  0  1",
+"2467  12 G 40 36.0  5  0  1",
+"2472  13 G 40 36.0  5  0  1",
+"2412   1 G 40 36.0  3  1  1",
+"2414  31 G 40 36.0  3  1  1",
+"2417   2 G 40 36.0  3  1  1",
+"2419  32 G 40 36.0  3  1  1",
+"2422   3 G 40 36.0  3  1  1",
+"2424  33 G 40 36.0  3  1  1",
+"2427   4 G 40 36.0  3  1  1",
+"2429  34 G 40 36.0  3  1  1",
+"2432   5 G 40 36.0  7  1  1",
+"2434  35 G 40 36.0  7  1  1",
+"2437   6 G 40 36.0  7  1  1",
+"2439  36 G 40 36.0  7  1  1",
+"2442   7 G 40 36.0  7  1  1",
+"2444  37 G 40 36.0  7  1  1",
+"2447   8 G 40 36.0  7  1  1",
+"2449  38 G 40 36.0  7  1  1",
+"2452   9 G 40 36.0  7  1  1",
+"2454  39 G 40 36.0  7  1  1",
+"2457  10 G 40 36.0  5  1  1",
+"2459  40 G 40 36.0  5  1  1",
+"2462  11 G 40 36.0  5  1  1",
+"2464  41 G 40 36.0  5  1  1",
+"2467  12 G 40 36.0  5  1  1",
+"2469  42 G 40 36.0  5  1  1",
+"2472  13 G 40 36.0  5  1  1",
+"2474  43 G 40 36.0  5  1  1",
+""];
+
+var cc_dialog = $('<div/>');
+var fixer = new ieee_mode_fixer("11nght20".toLowerCase(), "5");
+var ieee_mode = fixer.getIEEEMode();
+var extchannel = fixer.getExtChannel();
+var chanbw = "5";
+var devdomain = 2400;
+
+var airmax=1;
+// Channel will be set depending on wireless mode
+var rate="15";
+var mcast_rate="15";
+var chan_freq="0";
+var obey = 'enabled' == 'enabled';
+var is_ap = '2' == '2';
+
+var txpower_max = 28;
+if (txpower_max < 1)
+{
+	txpower_max = 26;
+}
+var txpower = 25;
+var antenna_gain = 11;
+var cable_loss = 0;
+var radio_txpower_min = -4;
+var txpower_regdomain_limit = -1;
+var country = "356";
+var unii_locked = false;
+var unii_supported = false;
+var dfs_lock = false;
+var no_fcc_unii_1 =(0 != 1) && (country == 840 || country == 630);
+
+if ((country == 840 || country == 630 || country == 124)) {
+        if (!unii_supported)
+        	dfs_lock = true;
+        else {
+		if (country != 124)
+       	        	dfs_lock = unii_locked;
+        }
+}
+
+var ieee_modes =
+{
+
+	'11naht' : 'A/N mixed',
+	'11nght' : 'B/G/N mixed'
+
+};
+
+var mac_clone = "";
+var polling = 'enabled' == 'enabled';
+var polling_fh = '0' == '1';
+var select_max_rate = '' == '1';
+
+var rg_data = parse_full_regdomain(full_regdomain);
+var regdomain = rg_data.regdomain;
+var sta_power = init_sta_power(regdomain);
+
+var globals = {
+	chanbw : 5,
+	supported_chanbw : "5,8,10,20,30,40",
+	i18n : { ht40_label : '40 MHz' },
+	previous_security : "none",
+	antennas : "0",
+	eirp_status : "disabled",
+	ccode_fixed: "0",
+	ant_builtin: "1"
+};
+
+var fw_check = {
+	enabled: true,
+	fw_str: "Firmware update {1} is available.",
+	no_str: "You have latest available Firmware version.",
+	no_conn_str: "No connection to www.ubnt.com from device.",
+	dl_str: 'Go to Ubiquiti Networks <a href="http://www.ubnt.com/support/downloads" target="_blank"> downloads</a> page.'
+};
+
+
+function doSubmit() {
+	$('#this_form').submit();
+}
+
+function init_ieee_mode(regdomain, value)
+{
+	var select = document.getElementById("ieee_mode_select");
+	var options;
+	var ieee_mode;
+
+	if (!select)
+	{
+		return value;
+	}
+	options = select.options;
+	options.length = 0;
+	for (ieee_mode in ieee_modes)
+	{
+		if (regdomain[getRegdomainMode(ieee_mode)])
+		{
+			options[options.length] = new Option(ieee_modes[ieee_mode],
+				ieee_mode, false, value == ieee_mode);
+		}
+	}
+
+	if (options.length < 2) $('#ieee_mode_select').disable();
+
+	if (options.length) {
+		$('#ieee_mode').val(select.options[select.selectedIndex].value);
+	}
+
+	return options.length ? select.options[select.selectedIndex].value : value;
+}
+
+function init_ext_channels(regdomain, ieee_mode, chanbw, airmax, chan_freq, value) {
+	var select;
+	var options;
+	var i;
+	var mode;
+	var channels;
+	var chan = null;
+
+	var ext;
+
+	select = document.getElementById("extchannel_select");
+	if (!select) {
+		return value;
+	}
+	mode = getRegdomainMode(ieee_mode);
+
+	if (!regdomain[mode] || !regdomain[mode][chanbw]) {
+		return value;
+	}
+	channels = regdomain[mode][chanbw];
+	chan = get_channel_by_freq(channels, chan_freq);
+
+	options = select.options;
+	options.length = 0;
+
+	if (chanbw != "40" || !chan) {
+		options[options.length] = new Option("None",
+			"", false, true);
+	} else {
+		ext = channels[chan][3];
+		if ((ext & 3) == 3) {
+			options[options.length] = new Option("Upper",
+				"plus", false, value == "plus");
+		}
+		if ((ext & 5) == 5) {
+			options[options.length] = new Option("Lower",
+				"minus", false, value == "minus");
+		}
+	}
+	setDisabled(select, options.length < 2);
+	return options.length ? select.options[select.selectedIndex].value : value;
+}
+
+function reinit_form(level, leave_rates)
+{
+	switch (level)
+	{
+	case 0: // reinit All
+		ieee_mode = init_ieee_mode(regdomain, ieee_mode);
+	case 1: // reinit on ieee_mode change
+		chanbw = init_chanbw(regdomain, ieee_mode, chanbw);
+	case 2: // reinit on chanbw change
+		// TODO: check this below...
+		rate = ""+rate;
+		if (!leave_rates)
+		{
+			rate = init_rates(regdomain, ieee_mode, chanbw, rate, "rate", select_max_rate);
+			if (level != 0) {
+				security = document.getElementById("security");
+				onSecurity(security, false);
+			}
+		}
+		// Set to lowest multicast on mode change.
+		mcast_rate = adjustMulticastRate(level == 1 ? 0 : mcast_rate, "rate");
+		setMaxrate('rate', 'maxrate');
+	case 3: // reinit on airmax change (is it really called ?)
+		var hideIndoor = false;
+		if ($('#hideindoor_chk').length > 0 && $('#hideindoor_chk').prop('checked'))
+			hideIndoor = true;
+		chan_freq = init_frequencies(regdomain, ieee_mode, globals.chanbw, airmax, chan_freq, level == 3, hideIndoor, no_fcc_unii_1);
+	case 4: // reinit on toggle obey
+		if (level != 2 && level != 3)
+			init_power(regdomain, sta_power, ieee_mode, globals.chanbw, chan_freq);
+		else if (level == 3)
+			txpower_regdomain_limit = getRegdomainPower(regdomain, sta_power, ieee_mode, globals.chanbw, chan_freq);
+
+		extchannel = init_ext_channels(regdomain, ieee_mode, globals.chanbw, airmax, chan_freq, extchannel);
+		document.getElementById("extchannel").value = (extchannel == null ? "" : extchannel);
+
+	}
+}
+
+function init_common() {
+	$(document).bind('rate_list_updated', function() {
+		if (typeof filterRates.all != 'undefined')
+			delete filterRates.all;
+	});
+	$(document).bind('frequencies_updated', updateFreqList);
+
+	$('#wmode').val("ap");
+	$('#country_ctrl').val(country);
+	if (country == 511) {
+		$('.obey_regulatory').hide();
+		obey = false;
+		$('#obey_regulatory_checkbox').prop('checked', false);
+		$('.gain_loss').hide();
+		globals.supported_chanbw = "5,8,10,20,25,30,40";
+	}
+	if (country == 902) {
+		$('.obey_regulatory').hide();
+		obey = false;
+	}
+	$('#antenna').val("4");
+	$('#antenna_gain').val("11");
+	$("#antenna_gain").bind("change", on_antenna_gain_change);
+	$('#cable_loss').val("0");
+	$("#cable_loss").bind("change", on_cable_loss_change);
+
+	createTxPowerSlider(txpower_max);
+	reinit_form(0);
+
+	$('#security').val("none");
+	var security = document.getElementById("security");
+	onSecurity(security, false);
+
+	$('#wpa_auth').val("WPA-PSK");
+	$('#wpa_eap').val("TTLS");
+	var wpa_auth = document.getElementById("wpa_auth");
+
+
+	$('#wep_key_length').val("wep64");
+	$('#wep_key_id').val("1");
+	$('#wep_key_type').val("1");
+
+	selectRadio("authtype", "1");
+	$('.pwd').attr('autocomplete', 'off').passwd({
+		label :  "Show",
+		migrate_attrs : [ 'req', 'callback', 'realname' ]
+	});
+
+	$('#radius_mac_acl_format').val("");
+	chooseWPA(wpa_auth, false);
+}
+
+function is_changeable_country(ccode) {
+	
+	if (requiresCE(ccode))
+		return false;
+	return true;
+}
+
+function change_country(cc) {
+        cc_dialog.dialog("open");
+}
+
+$(document).ready(function(){
+   	cc_dialog.load('/150716.1200/cc_change.cgi'+'?'+Math.random()*Math.random());
+
+	init_common();
+	toggleMACACL();
+	jQuery("#hidessid_chk").bind('click', function(){
+		jQuery("#hidessid").val(this.checked ? "enabled" : "disabled");
+	});
+	
+	if (jQuery("#hideindoor_chk").length > 0) {
+		jQuery("#hideindoor_chk").bind('click', function() {
+			chan_freq = init_frequencies(regdomain, ieee_mode, globals.chanbw, airmax, chan_freq, false, $('#hideindoor_chk').prop('checked'), no_fcc_unii_1);
+		});
+	}
+
+	$('#security_table').toggle(true);
+
+	$('#this_form').submit(function() {
+		if ($('#country_ctrl').val() == "0" &&
+				($('#country').val() == "511" ||
+				$('#country').val() == "891" ||
+				$('#country').val() == "0" ||
+				$('#country').val() == "")) {
+			$("#errorpad").css("paddingTop", "10px");
+			$("#error").text("Please select your country.");
+			$("#errortbl").show();
+	                return false;
+        	}
+        
+		if (!$('#channel_scan_list').is(':checked')) {
+			var scan_list = $('#scan_channels').val();
+			$(this).append('<input type="hidden" name="scan_channels" value="' + scan_list + '"/>');
+		}
+
+		$(this).append('<input type="hidden" name="chanbw" value="' + globals.chanbw + '"/>');
+		if ($('#obey_regulatory_checkbox').is(':disabled')) {
+			$(this).append('<input type="hidden" name="obey_regulatory_status" value="' + (obey ? "enabled" : "disabled") + '"/>');
+		}
+	});
+
+	$(document).bind('obey_toggled', function() {
+		obey = $('#obey_regulatory_checkbox').is(':checked'); // !! global
+		if (obey) {
+			var value = $('#scan_channels').val();
+			var scan_channels = get_current_scan_channels(value);
+			if (scan_channels.length > 0) {
+				var all_channels = get_scan_channels(regdomain, ieee_mode, globals.chanbw, airmax, obey, false, dfs_lock, no_fcc_unii_1);
+				var new_channels = [], i;
+				for (i = 0; i < scan_channels.length; ++i)
+				{
+					if ($.inArray(scan_channels[i], all_channels) != -1)
+						new_channels.push(scan_channels[i]);
+				}
+				var new_val = new_channels.join(',');
+				if (value != new_val)
+					$('#scan_channels').val(new_val);
+			}
+		}
+	});
+
+	cc_dialog.attr('title', "Change Country");
+	if ($("#country_ctrl").is(':visible')) {
+		var pos = $("#country_ctrl").position();
+		var y = pos.top - $(document).scrollTop();
+		cc_dialog.dialog(
+		{
+                	autoOpen: false,
+			bgiframe: true,
+			modal : true,
+			height : '360',
+			width: 400,
+			resizable : false,
+                        position: ['center', y],
+			buttons: {
+				"Accept": function() { 
+                                	if (!$('#agreed').is(":checked")) {
+                                        	$('#errmsg').html("To change country, you must agree to<br>terms of use.");
+                                                $('#errmsg').show();
+                                        	return false;
+                                        }
+                                        if ($('#country_select').val() == 0) {
+                                        	$('#errmsg').html("Please select your country.");
+                                                $('#errmsg').show();
+                                        	return false;
+                                        }
+                                        $('#country').val($('#country_select').val());
+                                	$(this).dialog("close");
+                                        $('#agreed').attr("checked", false);
+                                        $('#country_ctrl').change();
+                                        return true;
+                                },
+				"Cancel": function() { 
+                                	$(this).dialog("close"); 
+                                        $('#agreed').attr("checked", false);
+                                        $('#errmsg').hide();
+                                        return true;
+                                }
+			}
+		});
+	}
+	fwUpdateCheck(false, fw_check);
+	security.check();
+	obeyRegulatoryStatusClicked();
+	validateDfsChansWrls();
+});
+//-->
+</script>
+</head>
+
+<body>
+<table class="maintable" cellpadding="0" align="center" cellspacing="0">
+  <tr>
+    <td height="70">
+
+    <img src="/150716.1200/images/N2N.gif" alt="NanoStation M2">
+    
+    </td>
+    <td valign="bottom" align="right">
+
+<img src="/150716.1200/images/airos_logo.png">
+</td>
+  </tr>
+  <tr class="menu">
+    <td height="26" style="white-space: nowrap;">
+     <a href="ubnt.cgi"><img src="/150716.1200/images/ubnt.png" alt="UBNT" border="0"></a><a href="index.cgi"><img src="/150716.1200/images/main.png" alt="Main" border="0"></a><a href="link.cgi"><img src="/150716.1200/images/link_top.png" alt="Wireless" border="0"></a><a href="network.cgi"><img src="/150716.1200/images/net.png" alt="Network" border="0"></a><a href="advanced.cgi"><img src="/150716.1200/images/4dv.png" alt="Advanced" border="0"></a><a href="services.cgi"><img src="/150716.1200/images/srv.png" alt="Services" border="0"></a><a href="system.cgi"><img src="/150716.1200/images/system.png" alt="System" border="0"></a></td>
+	<td align="right" valign="top" style="white-space: nowrap;">
+		<select id="tools" onchange="showTool(this);">
+			<option value="" selected>Tools:</option>
+			<option value="signal_gui.cgi">Align Antenna...</option>
+			
+			<option value="survey.cgi?mode=tool">Site Survey...</option>
+			<option value="discovery.cgi">Discovery...</option>
+			
+			<option value="pingtest.cgi">Ping...</option>
+			<option value="traceroute.cgi">Traceroute...</option>
+			<option value="sptest.cgi">Speed Test...</option>
+			
+			<option value="airview.cgi">airView...</option>
+			
+		</select>&nbsp;<input type="button" value="Logout" onClick="window.location.href='/logout.cgi'+'?'+(new Date().getTime());">
+    </td>
+  </tr>
+
+
+
+
+ <tr>
+    <td colspan="2" class="centr">
+    <div id="warning">
+<table cellspacing="0" cellpadding="0" id="warningtbl" class="warningtbl" >
+<tr>
+<td class="infoleft">&nbsp;</td>
+<td class="infocenter" valign="top">
+    <div id="info"></div>
+</td>
+<td class="inforight">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="errorpad">
+<table cellspacing="0" cellpadding="0" id="errortbl" class="errortbl" >
+<tr>
+<td class="errorleft">&nbsp;</td>
+<td class="errorcenter" valign="top">
+    <div id="error"></div>
+</td>
+<td class="errorright">&nbsp;</td>
+</tr>
+</table>
+</div>
+
+    <br>
+    <form id="this_form" enctype="multipart/form-data" action="link.cgi" method="POST" onSubmit="return doAPSubmit(this);">
+    <table cellpadding="0" cellspacing="0" class="linktable">
+      <tr><th colspan="4"><input type="hidden" id="ackdistance" name="ackdistance" value="600"><input type="hidden" id="cc" name="cc" value="changed" disabled="disabled">Basic Wireless Settings</th></tr>
+	  <tr><td colspan="4" class="tdpad">&nbsp;</td></tr>
+      <!-- wireless link mode -->
+      <tr>
+        <td class="f d">Wireless Mode:<span class="help">
+            <!--<a href="/150716.1200/help/en_US/wmode.html" rel="help">[?]</a></span>-->
+        </td>
+        <td>
+	  <select id="wmode" name="wmode" req="1" realname="Wireless Mode:" onChange="onChangeAPSubmit();">
+
+	    <option value="sta" selected>Station</option>
+
+
+	    <option value="ap">Access Point</option>
+	    <option value="aprepeater">AP-Repeater</option>
+
+	  </select>
+	  <input type="hidden" name="oldwmode" id="oldwmode" value="ap">
+	  </td>
+	  <td class="f-left" colspan="2">
+&nbsp;
+	</td>
+      </tr>
+      <!-- WDS Peers -->
+      
+      <!-- WDS -->
+      <tr>
+        <td class="f">WDS (Transparent Bridge Mode):</td>
+	<td class="f-left" colspan="3">
+	  <input type="checkbox" name="wds_chkbox" id="wds_chkbox" value="enabled"
+	  	checked>
+	  	<label for="wds_chkbox">Enable</label>
+	</td>
+      </tr>
+      
+      <!-- SSID -->
+      <tr>
+        <td class="f">SSID:</td>
+        <td><input type="text" class="config" name="essid" id="essid" regexp="^[ -~]{0,32}$" maxlength="32" value="ubnt" req="1" realname="SSID"/>
+	<input type="hidden" name="hidessid" id="hidessid" value="disabled">
+	</td>
+	<td class="f-left" colspan="2">
+	<input type="checkbox" name="hidessid_chk" id="hidessid_chk" >
+	<label for="hidessid_chk">Hide SSID</label></td>
+      </tr>
+      <tr>
+        <!-- country code -->
+        <td class="f">Country Code:</td>
+        <td colspan="3" class="f-left">
+	  <select id="country_ctrl" size="1" name="country_ctrl" onChange="onChangeAPSubmit();" disabled="disabled">
+
+        	<option value="0">Select Your Country</option>
+	<option value="8">Albania</option>
+	<option value="12">Algeria</option>
+	<option value="32">Argentina</option>
+	<option value="51">Armenia</option>
+	<option value="533">Aruba</option>
+	<option value="36">Australia</option>
+	<option value="40">Austria</option>
+	<option value="31">Azerbaijan</option>
+	<option value="48">Bahrain</option>
+	<option value="50">Bangladesh</option>
+	<option value="52">Barbados</option>
+	<option value="112">Belarus</option>
+	<option value="56">Belgium</option>
+	<option value="84">Belize</option>
+	<option value="68">Bolivia</option>
+	<option value="70">Bosnia and Herzegovina</option>
+	<option value="76">Brazil</option>
+	<option value="96">Brunei Darussalam</option>
+	<option value="100">Bulgaria</option>
+	<option value="116">Cambodia</option>
+	<option value="124">Canada</option>
+	<option value="152">Chile</option>
+	<option value="156">China</option>
+	<option value="170">Colombia</option>
+	<option value="188">Costa Rica</option>
+	<option value="191">Croatia</option>
+	<option value="196">Cyprus</option>
+	<option value="203">Czech Republic</option>
+	<option value="208">Denmark</option>
+	<option value="214">Dominican Republic</option>
+	<option value="218">Ecuador</option>
+	<option value="818">Egypt</option>
+	<option value="222">El Salvador</option>
+	<option value="233">Estonia</option>
+	<option value="246">Finland</option>
+	<option value="250">France</option>
+	<option value="268">Georgia</option>
+	<option value="276">Germany</option>
+	<option value="300">Greece</option>
+	<option value="304">Greenland</option>
+	<option value="308">Grenada</option>
+	<option value="316">Guam</option>
+	<option value="320">Guatemala</option>
+	<option value="332">Haiti</option>
+	<option value="340">Honduras</option>
+	<option value="344">Hong Kong</option>
+	<option value="348">Hungary</option>
+	<option value="352">Iceland</option>
+	<option value="356" selected>India</option>
+	<option value="360">Indonesia</option>
+	<option value="368">Iraq</option>
+	<option value="372">Ireland</option>
+	<option value="376">Israel</option>
+	<option value="380">Italy</option>
+	<option value="388">Jamaica</option>
+	<option value="392">Japan</option>
+	<option value="400">Jordan</option>
+	<option value="398">Kazakhstan</option>
+	<option value="404">Kenya</option>
+	<option value="410">Korea Republic</option>
+	<option value="414">Kuwait</option>
+	<option value="428">Latvia</option>
+	<option value="422">Lebanon</option>
+	<option value="438">Liechtenstein</option>
+	<option value="440">Lithuania</option>
+	<option value="442">Luxembourg</option>
+	<option value="446">Macau</option>
+	<option value="807">Macedonia</option>
+	<option value="458">Malaysia</option>
+	<option value="470">Malta</option>
+	<option value="484">Mexico</option>
+	<option value="492">Monaco</option>
+	<option value="499">Montenegro</option>
+	<option value="504">Morocco</option>
+	<option value="524">Nepal</option>
+	<option value="528">Netherlands</option>
+	<option value="530">Netherlands Antilles</option>
+	<option value="554">New Zealand</option>
+	<option value="566">Nigeria</option>
+	<option value="578">Norway</option>
+	<option value="512">Oman</option>
+	<option value="586">Pakistan</option>
+	<option value="591">Panama</option>
+	<option value="598">Papua New Guinea</option>
+	<option value="604">Peru</option>
+	<option value="608">Philippines</option>
+	<option value="616">Poland</option>
+	<option value="620">Portugal</option>
+	<option value="630">Puerto Rico (U.S. territory)</option>
+	<option value="634">Qatar</option>
+	<option value="642">Romania</option>
+	<option value="643">Russia</option>
+	<option value="646">Rwanda</option>
+	<option value="652">Saint Barthelemy</option>
+	<option value="682">Saudi Arabia</option>
+	<option value="688">Serbia</option>
+	<option value="702">Singapore</option>
+	<option value="703">Slovakia</option>
+	<option value="705">Slovenia</option>
+	<option value="710">South Africa</option>
+	<option value="724">Spain</option>
+	<option value="144">Sri Lanka</option>
+	<option value="752">Sweden</option>
+	<option value="756">Switzerland</option>
+	<option value="158">Taiwan</option>
+	<option value="764">Thailand</option>
+	<option value="780">Trinidad and Tobago</option>
+	<option value="788">Tunisia</option>
+	<option value="792">Turkey</option>
+	<option value="804">Ukraine</option>
+	<option value="784">United Arab Emirates</option>
+	<option value="826">United Kingdom</option>
+	<option value="840">United States</option>
+	<option value="858">Uruguay</option>
+	<option value="860">Uzbekistan</option>
+	<option value="862">Venezuela</option>
+	<option value="704">Viet Nam</option>
+	<option value="887">Yemen</option>
+	<option value="716">Zimbabwe</option>
+
+
+          </select>
+          <input type="button" class="initial_hide" id="change_ccode" value="Change..." onClick="change_country($('#country'));"/>
+          <script> toggleCcChange(); </script>
+          <input type="hidden" name="old_country" id="old_country" value="356">
+          <input type="hidden" id="country" name="country" value="356">
+	</td>
+      </tr>
+      <!-- IEEE mode -->
+      <tr  >
+        <td class="f">IEEE 802.11 Mode:</td>
+	<td colspan="3">
+	  <select id="ieee_mode_select" name="ieee_mode_select" req="1" realname="IEEE 802.11 Mode:" onchange="onIEEEMode(this);">
+	  </select><input type="hidden" id="ieee_mode" name="ieee_mode" value="11nght20">
+	</td>
+      </tr>
+
+
+      <!-- rate mode -->
+      <tr>
+		<td class="f">Channel Width:<span class="help"><a href="/150716.1200/help/en_US/chanwidth.html" rel="help">[?]</a></span></td>
+		<td colspan="3" style="white-space: nowrap;">
+	  <select id="chanbw_select" name="chanbw_select" req="1" realname="Channel Width:" onChange="onChanbwsel(this);">
+	  </select><input type="hidden" id="chanbw" name="chanbw" value="5">
+	</td>
+      </tr>
+
+      <tr>
+        <td class="f">Frequency, MHz:</td>
+	<td colspan="3">
+	  <select id="chan_freq" name="chan_freq" req="1" realname="Frequency, MHz:" onChange="onFrequency(this); toggleObeyRegulatory();">
+	  </select>
+	</td>
+	
+      </tr>
+
+      <tr  >
+      <td class="f">Extension Channel:</td>
+        <td colspan="3">
+          <select id="extchannel_select" name="extchannel_select" req="1" realname="Extension Channel:" onchange="onExtChannel(this);" >
+          </select>
+ 	  <input type="hidden" id="extchannel" name="extchannel" value="" />
+        </td>
+      </tr>
+
+      <tr id="scan_list_row">
+        <td class="f">Frequency List, MHz:</td>
+	<td class="f-left">
+	  <input type="checkbox" name="channel_scan_list"
+	  	id="channel_scan_list" onClick="toggleScanChannels(); updateSliderOnChanlist();" value="enabled"
+	  	>
+	  	<label for="channel_scan_list">Enable</label>
+	</td>
+	<td colspan="2">
+	  <input type="text" class="initial_hide config" id="scan_channels" name="scan_channels" value="" req="1" realname="Frequency List, MHz" callback="validateChannelScanList">
+	  <input type="button" class="initial_hide" id="edit_scan_channels" name="edit_scan_channels" onClick="openScanChannelSelectWrls();" value="Edit...">
+	  <script> toggleScanChannels(); </script>
+	</td>
+      </tr>
+
+      <tr class="obey_regulatory">
+	<td class="f">Calculate EIRP Limit:</td>
+        <td colspan="3">
+    		<input type="checkbox" name="obey_regulatory_status"
+	  		id="obey_regulatory_checkbox" onClick="toggleObeyRegulatory(); obeyRegulatoryStatusClicked();" value="enabled"
+                	checked disabled="disabled" > <label class="f" for="obey_regulatory_checkbox">Enable</label>
+	</td>
+      </tr>
+
+
+	<tr class="gain_loss">
+			<td class="f">Antenna Gain:</td>
+			<td class="f-left">
+				<input type="text" class="std_width" size="5" id="antenna_gain" name="antenna_gain" onChange="on_antenna_gain_change();"
+					req="1" realname="Antenna Gain:" maxvalue="40" minvalue="0"/>
+				<label for="antenna_gain">dBi</label>
+			</td>
+		
+	</tr>
+
+      <!-- output power -->
+      <tr>
+        <td class="f">Output Power:</td>
+        <td class="d2" style="padding: 0px 0px 0px 0px;">
+			<div class="slider" id="slider-2" tabIndex="1">
+				<input class="slider-input" id="slider-input-2" name="slider-input-2"/>
+	 		</div>
+	 	</td>
+	 	<td colspan="2" class="f-left">
+		<input type="text" class="std_width" id="txpower" name="txpower" size="5" value="25" req="1" realname="Output Power" /> dBm
+		</td>
+      </tr>
+
+      <!-- data rate -->
+	  <tr>
+        <td class="f">Data Rate Module:</td>
+        <td colspan="3" class="f-left">
+			<select id="rate_module" name="rate_module" req="1" realname="Data Rate Module:">
+				<option value="atheros" selected>Default</option>
+				<option value="ewma_ht" >Alternative</option>
+			</select>
+		</td>
+      </tr>
+
+      <tr>
+        <td class="f">Max TX Rate, Mbps:</td>
+        <td colspan="3" class="f-left">
+	  <select id="rate" name="rate" req="1" realname="Transmission Rate, Mbps:"></select>
+	  <input type="checkbox" name="rate_auto" id="rate_auto" value="enabled" checked>
+	  <label for="rate_auto">Auto</label>
+	  <input type="hidden" name="mcast_rate" id="mcast_rate" value="15"></td>
+      </tr>
+
+      <tr><td colspan="4" class="tdpad">&nbsp;</td></tr>
+      <tr><th colspan="4">Wireless Security</th></tr>
+	  <tr><td colspan="4" class="tdpad">&nbsp;</td></tr>
+
+      <!-- security settings -->
+	<tbody id="security_table" class="initial_hide">
+      <tr>
+        <td class="f">Security:</td>
+	<td colspan="3">
+	  <select name="security" id="security"  req="1" callback="validateSecurity" onChange="onSecurity(this, true);" realname="Wireless Security. Weak wireless security (WEP, WPA-TKIP, WPA2-TKIP) is not supported any more.">
+			<option value="none">none</option>
+			<option value="wep">WEP</option>
+	
+			<option value="wpa">WPA</option>
+			<option value="wpatkip">WPA-TKIP</option>
+			<option value="wpaaes">WPA-AES</option>
+			<option value="wpa2">WPA2</option>
+			<option value="wpa2tkip">WPA2-TKIP</option>
+			<option value="wpa2aes">WPA2-AES</option>
+	
+	  </select>
+	</td>
+      </tr>
+     <tr class="nosec">
+        <td class="f">RADIUS MAC Authentication:</td>
+		<td class = "f-left" colspan="3"><input type="checkbox" name="radius_mac_acl_status" id="radius_mac_acl_status" value="enabled" onClick="toggleRadiusMACACL();"
+		>
+		<label for="radius_mac_acl_status">Enable</label></td>
+     </tr>
+     <tr class="nosec radaclmacform">
+        <td class="f">MAC Format:</td>
+	<td colspan="3">
+	  <select class="std_width i_radaclmacform" name="radius_mac_acl_format" id="radius_mac_acl_format">
+	    <option value="%.2X%.2X%.2X%.2X%.2X%.2X">XXXXXXXXXXXX</option>
+	    <option value="%.2X-%.2X-%.2X-%.2X-%.2X-%.2X">XX-XX-XX-XX-XX-XX</option>
+	    <option value="%.2X:%.2X:%.2X:%.2X:%.2X:%.2X">XX:XX:XX:XX:XX:XX</option>
+	  </select>
+	</td>
+      </tr>
+     <tr class="nosec radaclmacform">
+        <td class="f">Use Empty Password:</td>
+	<td class="f-left" colspan="3">
+		<input type="checkbox" name="radius_mac_acl_passwd" id="radius_mac_acl_passwd" value="disabled"
+		>
+		<label for="radius_mac_acl_passwd">Enable</label>
+	</td>
+      </tr>
+      <tr class="wep">
+        <td class="f">Authentication Type:</td>
+        <td class="f-left" colspan="3">
+	  <input type="radio" name="authtype" id="authtype" value="1" checked>Open
+	  <input type="radio" name="authtype" id="authtype" value="2">Shared Key
+	</td>
+      </tr>
+      <!-- WEP settings -->
+      <tr class="wep">
+        <td class="f">WEP Key Length:</td>
+	<td>
+	  <select name="wep_key_length" id="wep_key_length" onChange="updateWepError();">
+	    <option value="wep64">64 bit</option>
+	    <option value="wep128">128 bit</option>
+	  </select>
+	</td>
+	<td class="f">Key Type:</td>
+	<td>
+	  <select name="wep_key_type" id="wep_key_type" onChange="updateWepError();">
+	    <option value="1" selected>HEX</option>
+	    <option value="2">ASCII</option>
+	  </select>
+	</td>
+      </tr>
+
+      <tr class="wep">
+        <td class="f">WEP Key:</td>
+        <td><input type="text" class="config" name="wep_key" id="wep_key" value="" req="1" callback="validateWepKey" realname="WEP key (5 HEX pairs)"/></td>
+	<td class="f">Key Index:</td>
+	<td>
+	  <select name="wep_key_id" id="wep_key_id">
+	    <option value="1">1</option>
+	    <option value="2">2</option>
+	    <option value="3">3</option>
+	    <option value="4">4</option>
+	  </select>
+	</td>
+      </tr>
+      <tr class="wpa">
+        <td class="f">WPA Authentication:</td>
+	<td colspan="3">
+	  <select class="std_width" name="wpa_auth" id="wpa_auth" onChange="chooseWPA(this, true);">
+	    <option value="WPA-PSK">PSK</option>
+	    <option value="WPA-EAP">EAP</option>
+	  </select>
+	</td>
+      </tr>
+     <tr class="wpa wpapsk">
+        <td class="f">WPA Preshared Key:</td>
+        <td class="f-left" colspan="3"><input type="password" class="config pwd i_wpapsk" name="wpa_key" id="wpa_key" value="" req="1" callback="validateWpaKey" maxlength="63" realname="WPA passphrase (minimum 8 printable ASCII chars, maximum 63)" autocomplete="off"/></td>
+      </tr>
+     <tr class="wpa wpaeap radmacacl">
+        <td class="f">Auth Server IP/Port:</td>
+        <td colspan="3"><input type="text" class="config i_wpaeap i_radaclmac" name="radius_auth_ip"
+        id="radius_auth_ip" value="" req="1"
+        callback="validateLanIP" realname="Authentication Server IP"/>
+        <input type="text" class="std_width i_wpaeap i_radaclmac" maxlength="5" size="5"
+        name="radius_auth_port"
+        id="radius_auth_port" value="1812" req="1"
+        realname="Authentication Server Port"
+        minvalue="1" maxvalue="65535"/></td>
+      </tr>
+     <tr class="wpa wpaeap radmacacl">
+        <td class="f">Auth Server Secret:</td>
+        <td colspan="3"><input type="password" class="config pwd i_wpaeap i_radaclmac" name="radius_auth_secret"
+        id="radius_auth_secret" value="secret" req="1"
+	callback="validateRadiusSecret" realname="Authentication Server Secret (ASCII chars only, maximum 32)"
+        autocomplete="off"/></td>
+      </tr>
+      <tr class="wpa wpaeap radmacacl">
+        <td class="f">Accounting Server:</td>
+		<td class = "f-left" colspan="3"><input type="checkbox" name="radius_acct_status" id="radius_acct_status" value="enabled" onClick="toggleRadiusAcct();"
+		>
+		<label for="radius_acct_status">Enable</label></td>
+      </tr>
+     <tr class="wpa wpaeap radmacacl radacct">
+        <td class="f">Acct Server IP/Port:</td>
+        <td colspan="3"><input type="text" class="config i_wpaeap i_radaclmac i_radacct" name="radius_acct_ip"
+        id="radius_acct_ip" value="" req="1"
+        callback="validateLanIP" realname="Accounting Server IP"/>
+        <input type="text" class="std_width i_wpaeap i_radaclmac i_radacct" maxlength="5" size="5"
+        name="radius_acct_port"
+        id="radius_acct_port" value="1813" req="1"
+        realname="Server Accounting Port"
+        minvalue="1" maxvalue="65535"/></td>
+      </tr>
+     <tr class="wpa wpaeap radmacacl radacct">
+        <td class="f">Acct Server Secret:</td>
+        <td colspan="3"><input type="password" class="config pwd i_wpaeap i_radaclmac i_radacct" name="radius_acct_secret"
+        id="radius_acct_secret" value="secret" req="1"
+	callback="validateRadiusSecret" realname="Accounting Server Secret (ASCII chars only, maximum 32)"
+        autocomplete="off"/></td>
+      </tr>
+      <tr>
+        <td class="f">MAC ACL:</td>
+		<td class = "f-left" colspan="3"><input type="checkbox" name="mac_acl_status" id="mac_acl_status" value="enabled" onClick="toggleMACACL();"
+		>
+		<label for="mac_acl_status">Enable</label></td>
+      </tr>
+      <tr class="macacl">
+        <td class="f">Policy:</td>
+		<td colspan="3"><select class="i_macacl" name="mac_acl_policy" id="mac_acl_policy">
+		    <option value="allow"
+		    selected
+		    >
+		    Allow</option>
+	    	<option value="deny"
+	    	
+	    	>
+	    	Deny</option>
+	      </select>
+              <input type="button" id="macacl_configure" name="macacl_configure" class="i_macacl"
+                    value="ACL..."
+                    onClick="return openPage('macacl.cgi');" />
+	</td>
+      </tr>
+      <tr><td colspan="4" class="tdpad">&nbsp;</td></tr>
+      <tr><th colspan="4">&nbsp;</th></tr>
+	</tbody>
+      <tr>
+		<td colspan="4" class="change"><input type="submit" value="Change" /></td>
+      </tr>
+      </table>
+    </form>
+    </td>
+  </tr>
+  <tr> 
+   <td colspan="2">
+      <table cellpadding="0" align="center" cellspacing="0" width="100%">
+      <tr>
+	<td height="10" class="footlogo"><img src="/glogo.cgi" border="0"></td>
+	<td height="10" class="foottext">&copy; Copyright 2006-2015 Ubiquiti Networks, Inc.</td>
+      </tr>
+      </table>
+   </td>
+  </tr>
+</table>
+
+</body>
+</html>
+
