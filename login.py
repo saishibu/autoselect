@@ -2,6 +2,7 @@ import mechanize
 
 theurl = 'http://192.168.1.20/login.cgi'
 mech = mechanize.Browser()
+mech.set_handle_robots(False)
 mech.open(theurl)
 
 mech.select_form(nr=0)
