@@ -21,7 +21,7 @@ print "login success"
 
 url2='https://192.168.1.20/link.cgi'
 r=opener.open(url2)
-login_data=urllib.urlencode({'wmode':'sta'})
+login_data=urllib.urlencode({'wmode':'sta','action':'Change'})
 r=opener.open(url2,login_data)
 print r.read()
 
