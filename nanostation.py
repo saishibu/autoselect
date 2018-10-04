@@ -23,7 +23,7 @@ url2='https://192.168.1.20/link.cgi'
 r=opener.open(url2)
 login_data=urllib.urlencode({'wmode':'sta'})
 r=opener.open(url2,login_data)
-print r
+print r.read()
 
 
 #br = mechanize.Browser()
