@@ -19,7 +19,7 @@ login_data=urllib.urlencode({'username':'ubnt', 'password':'1234','action':'logi
 r=opener.open(url,login_data)
 print "login success"
 
-url2='https://192.168.179.65/link.cgi'
+url2='https://192.168.1.20/link.cgi'
 r=opener.open(url2)
 login_data=urllib.urlencode({'wmode':'sta'})
 r=opener.open(url2,login_data)
