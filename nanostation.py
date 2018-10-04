@@ -1,4 +1,8 @@
 #!usr/bin/python
+#wmode
+#sta
+#ap
+
 
 import urllib, urllib2, cookielib
 import ssl,json,time
