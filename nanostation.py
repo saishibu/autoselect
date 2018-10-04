@@ -20,6 +20,12 @@ r=opener.open(url,login_data)
 print "login success"
 
 url2='https://192.168.179.65/link.cgi'
-br = mechanize.Browser()
-br.open(url2)
-print(br.title())
+r=opener.open(url2)
+login_data=urllib.urlencode({'wmode':'sta'})
+r=opener.open(url2,login_data)
+print r
+
+
+#br = mechanize.Browser()
+#br.open(url2)
+#print(br.title())
